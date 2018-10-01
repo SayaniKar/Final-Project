@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Update Advertisement Records</title>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+input[type=text], select, textarea,input[type=file] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    width: 400px;
+}
+ h2{
+	  background-color:orange;
+      color:#fff !important;
+      text-align: left
+      font-size: 30px;
+	   letter-spacing: 5px;  
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=reset] {
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+input[type=reset]:hover {
+    background-color:red;
+}
+.container_ad {
+    border-radius: 5px;
+    background-image:
+     background-size: cover;
+    padding: 20px;
+ }
+form
+{
+	width:500px;
+	 padding: 5px;
+	background-color: rgba(255,255,255,0.4);
+}
+</style>
+</head>
+<body>
+
+
+<center>
+<div class="container_ad">
+
+<div style="border:1px; border-style:solid; border-color:grey; padding: 0.7em;">
+<h2 align="left"><span class="glyphicon glyphicon-chevron-right"></span>  Update The Records</h2>
+</div>
+<div style="border:1px; border-style:solid; border-color:grey; padding: 0.7em;">
+  <form action="">
+  <div class="footer">
+    <label for="title">Title<span style="color:red">*</span></label></br>
+    <input type="text" id="title" name="title" placeholder="Enter title..." pattern="[a-zA-Z]{10,}" required>
+	</br>
+    <label for="category">Category<span style="color:red">*</span></label>
+	&nbsp &nbsp &nbsp &nbsp
+    <select required>
+    <option value="select">--Select--</option>
+  <option value="properties">Properties</option>
+  <option value="used cars">Used Cars</option>
+  <option value="furniture">Furniture</option>
+  <option value="jobs">Jobs</option>
+  <option value="electronics and appliances">Electronics and Appliances</option>
+  <option value="mobiles">Mobiles</option>
+  <option value="bikes">Bikes</option>
+  <option value="fashion">Fashion</option>
+  <option value="books,sports & hobbies">Books, Sports & Hobbies</option>
+  <option value="services">Services</option>
+</select>
+  <br/><br/>
+ </div>
+<label for="description">Description<span style="color:red">*</span></label><br/>
+    <textarea id="description" name="description" placeholder="Enter description.." required rows="4" cols="40"></textarea>
+<br/><br/>
+    <label for="photo">Image<span style="color:red">*</span></label><br/>
+   <input type="file" name="photo" id="photo" accept="image/*" required>
+<br/><br/>
+     <label for="name">Name<span style="color:red">*</span></label><br/>
+     <input type="text" id="name" name="name" placeholder="Enter name..." pattern="[a-zA-Z\s]+" required>
+    <br/><br/>
+     <label for="phno">Phone No.<span style="color:red">*</span></label><br/>
+     <input type="text" id="phno" name="phno" placeholder="Enter phone no..." pattern="[7-9]{1}[0-9]{9}" required>
+    <br/><br/>
+     <label for="city">City<span style="color:red">*</span></label><br/>
+     <input type="text" id="city" name="city" placeholder="Enter city..." pattern="[a-zA-Z\s]+" required>
+   <br/><br/>
+   <input type="reset" class="resetbtn" value="Reset"/>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+</center>
+</body>
+</html>
