@@ -1,0 +1,4 @@
+code to send activation link to email address after registering using java rest controller spring boot
+
+
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
