@@ -1,0 +1,182 @@
+
+
+String REplace(will contain all the programs related to String)
+.................................................................
+
+
+package StringAndFile;
+import java.io.*;
+import java.util.*;
+
+public class StringReplace {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		int ch;
+		String content="";
+		String newContent="";
+		String anotherContent="";
+		String printContent=" ";int length=0;int index=0;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your choice:\n");
+        ch=sc.nextInt();
+        switch(ch)
+        {
+       /* case 1: System.out.println("String will be Reaplaced");
+        FileOutputStream fout=new FileOutputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+        FileInputStream fin=new FileInputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+    	String s1="This_is_a_beautiful_World";
+		byte b[]=s1.getBytes();
+		 fout.write(b);    
+         fout.close();
+         System.out.println("Success");
+         System.out.println("................");
+        int j;
+        String character="_";
+        while((j=fin.read())!=-1)
+        {
+          char ch1=(char)j;
+          content=content+ch1;
+          if(content.contains(character))
+          {
+        // character="?";
+         newContent=content.replaceAll("_", "?");
+         //newContent=character;
+          }
+        }
+          System.out.println(content);
+          System.out.println(newContent);
+          break;
+        	
+        */
+        case 2: System.out.println("To Find the Smallest and Largest Length of Words");
+        FileOutputStream fout1=new FileOutputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+        FileInputStream fin1=new FileInputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+        fout1.flush();
+        String newString="This_is_a_beautiful_World";
+		byte bytes[]=newString.getBytes();
+		 fout1.write(bytes);    
+         fout1.close();
+         System.out.println("Success");
+         System.out.println("................");
+        int k;
+        while((k=fin1.read())!=-1)
+        {
+        	char ch2=(char)k;
+         anotherContent=anotherContent+ch2;
+         if(anotherContent.contains("_")) 
+         {
+        	  index=anotherContent.indexOf("_");
+        	 printContent=anotherContent.substring(0,index);
+        	  length=printContent.length();
+        
+         }
+        }
+        //for(i=0;printContent[i]!=null;i++)
+        //System.out.println(printContent);
+        System.out.println(length);
+        	
+        }
+
+        }
+       
+        }
+		
+		
+		...................
+		
+		FileProgram1 (will contain all the programs related to files)
+		..............................................................
+		
+		package StringAndFile;
+import java.io.*;
+import java.util.*;
+
+public class FileProgram1 {
+
+		public static void main(String args[]) throws IOException
+		{
+			Scanner sc=new  Scanner(System.in);
+			int ch;
+			do {
+			System.out.println("Enter Your Choice:\n");
+			ch=sc.nextInt();
+			switch(ch)
+			{
+			case 1: System.out.println("Data will be inserted into the file");
+			//FileOutputStream fout=new FileOutputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+			//BufferedOutputStream bout=new BufferedOutputStream(fout);
+			//System.out.println("Enter the contents of File");
+			//System.out.println();
+			String s1="This_is_a_beautiful_World";
+			byte b[]=s1.getBytes();
+			//fout.write(b);
+			//bout.flush();
+			//bout.close();
+			//fout.close();
+			//System.out.println("Success");
+				FileOutputStream fout=new FileOutputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");    
+	             fout.write(b);    
+	             fout.close();    
+	             System.out.println("success...");    
+			break;
+			case 2: System.out.println("All the Datas will be displayed");
+			FileInputStream fin=new FileInputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+			BufferedInputStream bin=new BufferedInputStream(fin);
+			int i;
+			while((i=bin.read())!=-1)
+			{
+				System.out.print((char)i);
+			}
+			bin.close();
+			fin.close();
+			System.out.println();
+			System.out.println("The Details are displayed");
+			break;
+			case 3:System.out.println("Content of one file will be copied to another file");
+			FileInputStream fin1=new FileInputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+			FileOutputStream fout1=new FileOutputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File2.txt");
+			int j;
+			while((j=fin1.read())!=-1){
+				fout1.write(j);
+				System.out.println("The contents are:");
+				System.out.println((char)j);
+				
+			}
+			fout1.close();
+			fin1.close();
+			break;
+			/*case 4: int ch1;
+			System.out.println("Enter Your Choice:\n");
+		    ch1=sc.nextInt();
+		    switch(ch1)
+		    {
+		    case 1: System.out.println("Append contents in your File");
+		    FileOutputStream fout2=new FileOutputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+		    FileInputStream fin2=new FileInputStream("C:\\Users\\Dell\\Desktop\\StringAndFile\\File1.txt");
+		    //String s1="";
+		    //byte[] b1=s1.getBytes();
+		    int k;
+		    while((k=fin2.read())!=-1)
+		    	
+		    {  
+		    	fout2.write((char)73);
+		    }
+		    break;
+		    case 2: System.out.println("Change the Whole content");
+		    break;
+		    case 3:return;
+		     default: System.out.println("There is no other way to update");
+		    }*/
+			case 7: return;
+			default:System.out.println("No other options are available");
+		         
+			}
+			}while(ch!=7);
+		}
+	}
+
+
+	
+
+
