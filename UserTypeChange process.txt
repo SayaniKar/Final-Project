@@ -1,0 +1,178 @@
+
+Login Controller  :-
+......................
+
+package com.olx.userservice.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.olx.userservice.pojo.UserPojo;
+import com.olx.userservice.service.LoginService;
+
+@RestController
+public class LoginController {
+	
+	@Autowired
+ 	public LoginService loginservice;
+	
+	@RequestMapping(value = "/phoneandpass/{phoneNo},{password}", method = RequestMethod.GET)
+    public UserPojo getPhoneNo(@PathVariable("phoneNo") String phoneNo, @PathVariable("password") String password) {
+		return loginservice.findByPhoneNoAndPassword(phoneNo, password);
+    }
+	
+	@RequestMapping(value = "/emailandpass/{emailId},{password}", method = RequestMethod.GET)
+	public UserPojo getEmailId(@PathVariable("emailId") String emailId, @PathVariable("password") String password) {
+	    return loginservice.findByEmailIdAndPassword(emailId, password);
+	}
+
+}
+RegisterController :-
+...................
+
+
+package com.olx.userservice.controller;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.olx.userservice.pojo.UserPojo;
+import com.olx.userservice.service.RegisterService;
+
+
+
+@RestController
+public class RegisterController {
+	 	@Autowired
+	 	public RegisterService registerService;
+
+		@RequestMapping(value = "/create", method = RequestMethod.GET)
+		public UserPojo addNewRegister(@RequestBody UserPojo user) {
+			user.setActivated(true);
+			user.setUserType("free");
+			return registerService.addregister(user);
+		}
+		@RequestMapping(value = "/update1/{phoneNo}", method = RequestMethod.PUT)
+		public UserPojo UpdateUserType(@RequestBody UserPojo user,@PathVariable("phoneNo") String phoneNo) {
+		
+				 user.setUserType("paid");
+				 
+		return registerService.findByPhoneNoandUpdateType(phoneNo, user);
+		}
+		
+		@RequestMapping(value ="/get", method = RequestMethod.GET)
+		public List<UserPojo> findAll() {
+			
+			return registerService.findAll();
+		}
+		@RequestMapping(value = "/phone/{phoneNo}", method = RequestMethod.GET)
+		  public UserPojo getPhoneNo(@PathVariable("phoneNo") String phoneNo) {
+		    return registerService.findByPhoneNo(phoneNo);
+		  }
+		@RequestMapping(value = "/email/{emailId}", method = RequestMethod.GET)
+		  public UserPojo getEmailId(@PathVariable("emailId") String emailId) {
+		    return registerService.findByEmailId(emailId);
+		}
+		@RequestMapping(value = "/update", method = RequestMethod.PUT)
+		public UserPojo updateRegister(@RequestBody UserPojo register) {
+			
+			return registerService.updateregister(register);
+		}
+		
+}
+
+LoginService
+..............
+
+package com.olx.userservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.olx.userservice.pojo.UserPojo;
+import com.olx.userservice.repository.LoginRepository;
+
+
+@Service
+public class LoginService {
+	
+	@Autowired
+	public LoginRepository loginrepository;
+
+	public UserPojo findByPhoneNoAndPassword(String phoneNo, String password) {
+		return loginrepository.findByPhoneNoAndPassword(phoneNo, password) ;
+	}
+
+	public UserPojo findByEmailIdAndPassword(String emailId, String password) {
+		return loginrepository.findByEmailIdAndPassword(emailId, password);
+	}
+	
+
+}
+
+RegisterService
+.................
+
+package com.olx.userservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.olx.userservice.pojo.UserPojo;
+import com.olx.userservice.repository.RegisterRepository;
+
+
+
+@Service
+public class RegisterService {
+@Autowired
+public RegisterRepository registerRepo;
+public UserPojo addregister(UserPojo register) {
+	// TODO Auto-generated method stub
+	return registerRepo.save(register);
+}
+
+
+
+
+
+public List<UserPojo> findAll() {
+	return registerRepo.findAll();
+}
+
+public UserPojo findByPhoneNo(String phoneNo) {
+	// TODO Auto-generated method stub
+	return registerRepo.findByPhoneNo(phoneNo) ;
+}
+
+public UserPojo findByEmailId(String emailId) {
+	// TODO Auto-generated method stub
+	return registerRepo.findByEmailId(emailId);
+}
+public UserPojo updateregister(UserPojo register) {
+	// TODO Auto-generated method stub
+	return registerRepo.save(register);
+}
+public UserPojo findByPhoneNoandUpdateType(String phoneNo,UserPojo user)
+{
+	return registerRepo.save(user);
+}
+	
+}
+
+
+
+
+
