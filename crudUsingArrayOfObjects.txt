@@ -1,0 +1,66 @@
+
+	/*private   BankAccount bankAccount[];
+	private  int index;
+	
+	public BankAccountList(int size)
+	{
+		bankAccount=new BankAccount[size] ;
+		
+	}
+	public BankAccountList()
+	{
+		bankAccount=new BankAccount[5] ;
+		
+	}
+	public  void addBankAccount(BankAccount b)
+	{
+		
+		bankAccount[index]=b;
+		index++;
+	}
+	public  BankAccount[] getBankAccount()
+	{
+		return bankAccount;
+	}
+	
+	public  BankAccount getBankAccountByAccountId(int accountNo)
+	{
+		for(int internalIndex=0;internalIndex<index;internalIndex++)
+		{
+			if(bankAccount[internalIndex].getAccountNo()==accountNo)
+				return bankAccount[internalIndex];
+		}
+		throw new RuntimeException("Account No. does not exists");	
+	}
+	public  BankAccount[] removeBankAccount(int accountNo)
+	{
+		for(int internalIndex=0;internalIndex<index;internalIndex++)
+		{
+			if(bankAccount[internalIndex].getAccountNo()==accountNo)
+			{
+				for(int insideInternalIndex=internalIndex;insideInternalIndex<bankAccount.length-1;insideInternalIndex++)
+				{
+					bankAccount[insideInternalIndex]=bankAccount[insideInternalIndex+1];
+				}
+				index--;
+				return bankAccount;
+			}
+			
+				
+		}
+		throw new RuntimeException("Account No. does not exists");
+	}
+		public  BankAccount[] updateBankAccount(int accountNo,String accountHolderName )
+		{
+			for(int internalIndex=0;internalIndex<index;internalIndex++)
+			{
+				if(bankAccount[internalIndex].accountNo==accountNo)
+				{
+					bankAccount[internalIndex].setAccountHolderName(accountHolderName);
+					return bankAccount;	
+				}
+			}
+			throw new RuntimeException("Account No. does not exists");
+	}*/
+	
+}
