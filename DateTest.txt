@@ -1,0 +1,65 @@
+package com.capgemini.Date;
+
+
+public class DateTest {
+	public class DateDifferenceProvider {
+		
+
+		private static final int DAY_IN_YEAR=365;
+		private static final int DAY_IN_LEAPYEAR=366;
+		private static final int FEB=2;
+		
+		private static final int DAY_IN_JAN=31;
+		private static final int DAY_IN_FEB=28;
+		private static final int DAY_IN_MAR=31;
+		private static final int DAY_IN_APR=30;
+		private static final int DAY_IN_MAY=31;
+		private static final int DAY_IN_JUN=30;
+		private static final int DAY_IN_JUL=31;
+		private static final int DAY_IN_AUG=31;
+		private static final int DAY_IN_SEPT=30;
+		private static final int DAY_IN_OCT=31;
+		private static final int DAY_IN_NOV=30;
+		private static final int DAY_IN_DEC=31;
+		
+		private static final int DAYS[]={DAY_IN_JAN,DAY_IN_FEB,DAY_IN_MAR,DAY_IN_APR,DAY_IN_MAY,DAY_IN_JUN,DAY_IN_JUL,DAY_IN_AUG,DAY_IN_SEPT,DAY_IN_OCT,DAY_IN_NOV,DAY_IN_DEC};
+		
+		public static int getDifference(MyDate startDate,MyDate endDate)
+		{
+			if(sameDay(startDate, endDate) && sameMonth(startDate, endDate) && sameYear(startDate, endDate))
+			{
+				return 0;
+			}
+			else if(sameMonth(startDate, endDate) && sameYear(startDate, endDate))
+			{
+				return endDate.getDd()-startDate.getDd();
+			}
+			else if()
+		}
+		
+		private static boolean sameDay(MyDate startDate,MyDate endDate)
+		{
+			if(endDate.getDd()==startDate.getDd())
+			{
+				return true;
+			}
+			return false;
+		}
+		private static boolean sameMonth(MyDate startDate,MyDate endDate)
+		{
+			if(endDate.getMm()==startDate.getMm())
+			{
+				return true;
+			}
+			return false;
+		}
+		private static boolean sameYear(MyDate startDate,MyDate endDate)
+		{
+			if(endDate.getYyyy()==startDate.getYyyy())
+			{
+				return true;
+			}
+			return false;
+		}
+	}
+		
