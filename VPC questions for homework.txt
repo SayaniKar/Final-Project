@@ -1,0 +1,12 @@
+What are the differences between public IP and Elastic IP
+Nat instance Vs NAT gateway
+Uses cases of NAT gateway and NAT instance
+How to provide HA to NAT
+Security Group Vs Network access control list
+use cases of NACL
+what is VPC peering and it’s features
+What is ENI?
+What are the use cases of a secondary ENI?
+What is a bastion host? Why should you be using it?
+What is direct connect? Why should you be using it?
+What is VPC? what are devices required to connect AWS vpn with your on-premises network.
